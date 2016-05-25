@@ -1,0 +1,23 @@
+rails g model Marca nome
+rails g model Opcional nome
+rails g model Veiculo marca:belongs_to placa cor
+
+
+
+
+
+
+
+
+Marca
+ 	nome
+
+Veiculo
+	marca_id
+	placa
+	cor
+
+Opcional
+	nome
+
+

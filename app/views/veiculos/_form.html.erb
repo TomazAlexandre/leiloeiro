@@ -1,0 +1,10 @@
+<%= simple_form_for @veiculo, :html => { :class => 'form-vertical' } do |f| %>
+  <%= f.association :marca, collection: Marca.all.map {|m| [m.nome, m.id]}, prompt: 'Selecione a marca' %>
+  <%= f.input :placa %>
+  <%= f.input :cor %>
+  <%= f.association :opcionais, as: :check_boxes, collection: Opcional.all.map {|o| [o.nome, o.id]}, prompt: 'Selecione os opcionais' %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                veiculos_path, :class => 'btn btn-default' %>
+<% end %>
